@@ -23,11 +23,13 @@ This repository contains statistical analyses and visualizations based on physio
 ## Files Included
 
 - `uh60_analysis.py`: Main analysis script  
-- `uh60_sample_data.xlsx`: Anonymized example dataset for demonstration purposes only  
+- `sample_data.xlsx`: Anonymized example dataset for demonstration purposes only  
 
 > The included dataset is synthetic and anonymized. You may replace it with your own real data matching the same structure.
 
 ## How to Run (in Google Colab)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cem5113/uh60-fatigue-analysis/blob/main/uh60_analysis.py)
 
 1. Open [Google Colab](https://colab.research.google.com/)
 2. Upload `uh60_analysis.py` and `sample_data.xlsx`
