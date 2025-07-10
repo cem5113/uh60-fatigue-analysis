@@ -1,0 +1,15 @@
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Office geçici dosyaları
+~$*
