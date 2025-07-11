@@ -15,7 +15,7 @@ uploaded = files.upload()
 excel_files = sorted([f for f in os.listdir() if f.endswith('.xlsx')], reverse=True)
 
 if excel_files:
-    file_name = excel_files[0]
+    file_name = excel_files[0] 
     print(f"🔍 Excel file found: {file_name}")
     df = pd.read_excel(file_name)
     df.columns = df.columns.str.strip().str.lower()
@@ -53,6 +53,10 @@ t_bpm_role = ttest_ind(bpm_pre_pilot, bpm_pre_copilot, equal_var=False)
 print("\n Pilot vs Copilot (Pre-flight BPM):")
 print(f"• t = {t_bpm_role.statistic:.2f}, p = {t_bpm_role.pvalue:.4f}")
 
+print(f"• Additionally, a statistically significant difference was found between pilots and copilots in terms of pre-flight heart rate "
+      f"(M_pilot = {bpm_pre_pilot.mean():.1f} bpm, M_copilot = {bpm_pre_copilot.mean():.1f} bpm), "
+      f"Welch’s t ≈ {t_bpm_role.statistic:.2f}, p = {t_bpm_role.pvalue:.4f}.")
+
 # Step 9: Shapiro-Wilk Normality Test
 print("\n Shapiro-Wilk Normality Test:")
 for col in df.select_dtypes(include='number').columns:
@@ -63,6 +67,7 @@ for col in df.select_dtypes(include='number').columns:
         print(f"• {col}: p = {p:.4f} → {'Normal' if p > 0.05 else 'Non-normal'}")
 
 # Step 10: Visualizations
+
 # Oxygen Saturation Boxplot
 df_spo2 = pd.melt(df, id_vars=['role'], value_vars=['spo2_pre', 'spo2_in', 'spo2_post'], var_name='phase', value_name='SpO2')
 plt.figure(figsize=(8, 5))
